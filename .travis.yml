@@ -10,12 +10,13 @@
 #   - dotnet build
 #   - dotnet test
 
+os: linux
+dist: focal
 language: csharp
-solution: ShoppingCart.sln
 mono: none
-dotnet: 7.0.100-preview.3.21202.5
-install:
-  - dotnet restore
+dotnet: 7.0.100-preview.1
+
 script:
+  - dotnet restore
   - dotnet build
   - dotnet test
