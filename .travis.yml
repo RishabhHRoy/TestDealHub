@@ -17,7 +17,7 @@ matrix:
   include:
     - os: linux
       dist: focal
-      dotnet: 7.0.400
+      dotnet: 7.0.100
       mono: none
 
 # Add more platforms as needed
