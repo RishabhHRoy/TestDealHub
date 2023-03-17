@@ -33,7 +33,7 @@ namespace ShoppingCart.Areas.Admin.Controllers
             //                                                                .Skip((p - 1) * pageSize)
             //                                                                .Take(pageSize)
             //                                                                .ToListAsync());
-            return View(_context.Products.Include(c => c.Category).ToList());
+            return View(await _context.Products.Include(c => c.Category).ToListAsync());
             //return View();
         }
                 public async Task<IActionResult> Details(int? id)
@@ -52,9 +52,10 @@ namespace ShoppingCart.Areas.Admin.Controllers
                         return NotFound();
                     }
 
-                        return View(product);
+            //return View(product);
+            return View(await Task.FromResult(product));
 
-                }
+        }
 
                 public IActionResult Create()
                 {

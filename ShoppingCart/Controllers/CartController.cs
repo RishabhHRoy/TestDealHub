@@ -76,8 +76,8 @@ namespace ShoppingCart.Controllers
                         }
 
                         TempData["Success"] = "The product has been removed!";
-
-                        return RedirectToAction("Index");
+            await _context.SaveChangesAsync();
+                         return RedirectToAction("Index");
                 }
 
                 public async Task<IActionResult> Remove(long id)
@@ -96,7 +96,7 @@ namespace ShoppingCart.Controllers
                         }
 
                         TempData["Success"] = "The product has been removed!";
-
+            await _context.SaveChangesAsync();
                         return RedirectToAction("Index");
                 }
 

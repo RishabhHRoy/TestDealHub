@@ -37,7 +37,7 @@ namespace ShoppingCart.Controllers
             //ViewBag.TotalPages = (int)Math.Ceiling((decimal)productsByCategory.Count() / pageSize);
 
             //return View(await productsByCategory.OrderByDescending(p => p.Id).Skip((p - 1) * pageSize).Take(pageSize).ToListAsync());
-            return View(_context.Products.Include(c => c.Category).ToList());
+            return View(await _context.Products.Include(c => c.Category).ToListAsync());
         }
 
         public async Task<IActionResult> Details(int? id)
