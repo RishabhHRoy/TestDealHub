@@ -3,15 +3,9 @@ jobs:
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/sdk:7.0
-      - image: microsoft/dotnet-framework:4.7.2-sdk
     working_directory: ~/TestDealHub
     steps:
       - checkout
-      -run:
-        name: Install .NET Framework 4.7.2
-        command: |
-            dotnet tool install --global dotnet-legacy-versions
-            dotnet legacy-sdk-versions --sdk-version 4.7.2 --verbose
       - run: dotnet restore
       - run: dotnet build
       - run: dotnet test
