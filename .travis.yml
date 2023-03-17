@@ -27,5 +27,5 @@ install:
 
 script:
   - dotnet build
-  - dotnet test UnitTest.csproj
+  - dotnet test
 
