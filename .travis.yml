@@ -1,11 +1,21 @@
+# language: csharp
+# mono: none
+# dotnet: 7.0.100-preview.2
+
+# before_script:
+#   - cd ~/TestDealHub
+
+# script:
+#   - dotnet restore
+#   - dotnet build
+#   - dotnet test
+
 language: csharp
+solution: ShoppingCart.sln
 mono: none
-dotnet: 7.0.100-preview.2
-
-before_script:
-  - cd ~/TestDealHub
-
-script:
+dotnet: 7.0.100-preview.3.21202.5
+install:
   - dotnet restore
+script:
   - dotnet build
   - dotnet test
