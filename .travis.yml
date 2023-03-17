@@ -10,13 +10,22 @@
 #   - dotnet build
 #   - dotnet test
 
-os: linux
-dist: focal
 language: csharp
-mono: none
-dotnet: 7.0.100-preview.1
+solution: ShoppingCart.sln
+
+matrix:
+  include:
+    - os: linux
+      dist: focal
+      dotnet: 7.0.100
+      mono: none
+
+# Add more platforms as needed
+
+install:
+  - dotnet restore
 
 script:
-  - dotnet restore
   - dotnet build
-  - dotnet test
+  - dotnet test UnitTest.csproj
+
